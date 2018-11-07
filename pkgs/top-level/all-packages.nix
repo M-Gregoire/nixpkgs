@@ -12412,6 +12412,8 @@ with pkgs;
     ncurses = null;
   });
 
+  standardnotes = callPackage ../applications/editors/standardnotes { };
+
   stfl = callPackage ../development/libraries/stfl { };
 
   stlink = callPackage ../development/tools/misc/stlink { };
