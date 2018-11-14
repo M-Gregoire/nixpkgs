@@ -19048,6 +19048,8 @@ with pkgs;
 
   lightdm-mini-greeter = callPackage ../applications/display-managers/lightdm-mini-greeter { };
 
+  lightdm-web-greeter = callPackage ../applications/display-managers/lightdm-web-greeter { };
+
   ly = callPackage ../applications/display-managers/ly { };
 
   slic3r = callPackage ../applications/misc/slic3r { };
