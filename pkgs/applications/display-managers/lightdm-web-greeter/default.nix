@@ -20,11 +20,10 @@ in
     #buildInputs = [ meson pkgconfig dbus-glib lightdm x11 gtk3-x11 webkitgtk ];
 
     # Patch shebang and set correct variables in utils.sh
-    # Set correct permissions
-    preBuild = ''
+    buildPhase = ''
       patchShebangs build/utils.sh
-      sed -i 's~REPO_DIR=~REPO_DIR="$src" #~g' build/utils.sh
-      sed -i 's~BUILD_DIR=~BUILD_DIR="$src" #~g' build/utils.sh
+      sed -i "s~REPO_DIR=~REPO_DIR=\"$PWD\" #~g" build/utils.sh
+      sed -i "s~BUILD_DIR=~BUILD_DIR=\"$PWD\" #~g" build/utils.sh
       sed -i 's~INSTALL_ROOT=~INSTALL_ROOT="$out" #~g' build/utils.sh
     '';
 
